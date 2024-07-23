@@ -1,10 +1,12 @@
 import { ref } from 'vue';
+import useAuth from '@/store/auth';
+
 
 
 class SurveysService{
        posts;
        post;
-
+       store= useAuth()
      // cuando llamemos el servicio a traves de un componente nos generar un posts vacio al comienzo a traves del constructor 
      constructor(){
 
@@ -31,10 +33,41 @@ class SurveysService{
      async fetchAll(){
 
         try{
-            const url = 'http://127.0.0.1:8000/api/surveys'
-            const response = await fetch(url)
-            const json = await response.json()  
-            this.posts.value = await json 
+             const uri= `${this.store.baseURL}/api_surveys`
+
+            const rawResponse= await fetch(uri,{
+                method:'GET',
+                headers:{
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization':`Bearer ${this.store.token}`
+                }
+               
+              
+            })
+
+
+            const response= await rawResponse.json()
+
+            this.posts.value = await response 
+
+            console.log("surveys:",this.posts.value)
+
+
+            // Obtener los IDs de las materias en las que el usuario está inscrito
+            const userSubjectIds = this.store.subjects_register.map(item => item.subject.subject_id);
+
+            console.log("userSubjectIds:",userSubjectIds)
+
+            // Filtrar las encuestas según las materias del usuario
+            const filteredSurveys = this.posts.value.filter(survey => userSubjectIds.includes(survey.subject_id));
+            
+            this.posts.value= filteredSurveys
+          
+            console.log("filteredSurveys",filteredSurveys)
+
+
+         
 
         }catch(error){
             console.log(error)
@@ -46,10 +79,30 @@ class SurveysService{
      async fetchById(id){
 
       try{
-          const url =`http://127.0.0.1:8000/api/surveys/${id}`
-          const response = await fetch(url)
-          const json = await response.json()  
-          this.post.value = await json 
+         
+        
+
+
+          const uri= `${this.store.baseURL}/api_surveys/${id}`
+
+          const rawResponse= await fetch(uri,{
+              method:'GET',
+              headers:{
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                  'Authorization':`Bearer ${this.store.token}`
+              }
+             
+            
+          })
+
+
+          const response= await rawResponse.json()
+
+          this.posts.value = await response 
+
+
+
           
 
       }catch(error){
@@ -63,11 +116,15 @@ class SurveysService{
       // Nuevo método para enviar los datos del formulario
     async submitSurveyResponse( response) {
         try {
-            const url = `http://127.0.0.1:8000/api/results`;
+            
+            const url = `${this.store.baseURL}/results`;
             const res = await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json',
+                    'Authorization': `Bearer ${this.store.token}`
+                   
                 },
                 body: JSON.stringify(response)
             });
@@ -77,6 +134,12 @@ class SurveysService{
             console.log(error);
         }
     }
+
+
+
+
+
+
 
 
     

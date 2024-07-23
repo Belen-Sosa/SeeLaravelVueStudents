@@ -1,4 +1,8 @@
 <template>
+   <router-link to="/"> Home </router-link>
+    
+    <router-link to="/SurveysListView"> Surveys </router-link>
+    <router-link to="/login"> Login </router-link>
   <div>
     <h2>Esta es la encuesta</h2>
     <div v-if="survey">
@@ -86,7 +90,7 @@ const validationError = ref(false);
 onMounted(async () => {
   const id = route.params.id;
   await service.fetchById(id);
-  survey.value = service.getPost().value;
+  survey.value = service.getPosts().value;
 
   // Inicializa el objeto responses con las preguntas
   survey.value.questions.forEach(question => {
