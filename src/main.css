@@ -1,3 +1,34 @@
+
+
+/* index.css o app.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bg-banner {
+    background-image: url('../public/imgs/imagenBanner1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title{
+    @apply  font-semibold  leading-tight text-3xl drop-shadow-md  text-white;
+}
+
+.content-data{
+    @apply drop-shadow-md p-2 bg-white  border-b rounded
+}
+
+.button-add{
+    @apply text-white bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded drop-shadow-md;
+}
+
+.button-edit{
+   @apply py-2 px-4  text-yellow-600 hover:text-yellow-700
+}
+
+.button-delete{
+    @apply py-2 px-4 text-red-600 hover:text-red-700
+}
+.alert-error {
+    @apply bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4;
+  }

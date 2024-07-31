@@ -6,6 +6,7 @@ const useAuth= defineStore('auth',{
             token:null,
             baseURL: 'http://127.0.0.1:8000/api',
             subjects_register:null,
+            name:''
            
         }
     },
@@ -41,7 +42,7 @@ const useAuth= defineStore('auth',{
                 console.log("entro aka",response.token)
                 console.log(  "response")
                 console.log(  response)
-              
+                this.name= response.user.name
 
                 this.subjects_register=response.subjects_register
           

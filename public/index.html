@@ -4,14 +4,58 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="icon" href="/imgs/icono.jpg" type="image/jpg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title></title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Figtree', sans-serif;
+        font-weight: 400; /* Default weight */
+      }
+      .bg-banner {
+        position: fixed; /* Cambia a fixed para que permanezca mientras se desplaza */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/path/to/your/image.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -1; /* Asegúrate de que el fondo esté detrás del contenido */
+      }
+      .bg-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6); /* Opacity overlay */
+        z-index: -1;
+      }
+      .content {
+        position: relative;
+        z-index: 1; /* Ensures content is above the overlay */
+        min-height: 100vh;
+        color: white; /* Optionally, to ensure text is readable over the background */
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
+    <div class="bg-banner"></div>
+    <div class="content">
+      <noscript>
+        <strong>We're sorry but doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      </noscript>
+      <div id="app"></div>
+    </div>
     <!-- built files will be auto injected -->
+    <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
   </body>
 </html>
