@@ -31,7 +31,7 @@ Cuenta con las siguientes secciones:
 
 ## Realizar Encuesta
 
-![realizar encuesta parte 1](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/realizar-encuesta.JPG)
+![realizar encuesta parte 1](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/realizar%20encuesta%200.JPG)
 ![realizar encuesta parte 2](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/realizar-encuesta-2.JPG)
 
 ## Confirmacion de encuesta realizada
