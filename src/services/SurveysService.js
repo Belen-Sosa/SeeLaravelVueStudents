@@ -58,7 +58,7 @@ class SurveysService{
             const userSubjectIds = this.store.subjects_register.map(item => item.subject.subject_id);
 
             console.log("userSubjectIds:",userSubjectIds)
-
+        
             // Filtrar las encuestas según las materias del usuario
             const filteredSurveys = this.posts.value.filter(survey => userSubjectIds.includes(survey.subject_id));
             

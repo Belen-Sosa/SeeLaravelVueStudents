@@ -1,6 +1,8 @@
 <template>
   <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-    <div class="mt-40 sm:mx-auto sm:w-full sm:max-w-sm">
+    <h1 class="text-white title m-auto mt-20 shadow-text">Sistema de Encuestas y Estadísticas</h1>
+    <div class="mt-20 sm:mx-auto sm:w-full sm:max-w-sm">
+   
       <form class="space-y-6 bg-form-background" action="#" method="POST">
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-white">Email</label>
