@@ -1,6 +1,6 @@
 # SEE-ESTUDIANTES
 
-**SISTEMA DE ENCUESTAS Y ESTADISTICAS - Gestion administrativa.**
+**SISTEMA DE ENCUESTAS Y ESTADISTICAS - Estudiantes.**
 
 Aplicacion web para que los alumnos de una institucion realizen encuestas de manera anonima con respecto a la eficiencia de las materias que cursan.
 
