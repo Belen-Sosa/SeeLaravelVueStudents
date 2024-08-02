@@ -1,4 +1,4 @@
-# SEE-ADMIN
+# SEE-ESTUDIANTES
 
 **SISTEMA DE ENCUESTAS Y ESTADISTICAS - Gestion administrativa.**
 
