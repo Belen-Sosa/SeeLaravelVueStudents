@@ -34,6 +34,8 @@ Cuenta con las siguientes secciones:
 ![realizar encuesta parte 1](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/realizar-encuesta.JPG)
 ![realizar encuesta parte 2](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/realizar-encuesta-2.JPG)
 
+## Confirmacion de encuesta realizada
+![Encuesta realizada](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/encuesta-realizada.JPG)
 ## USUARIO:
 
 ![usuario](https://github.com/Belen-Sosa/SeeLaravelVueStudents/blob/main/imgs-git/index-usuario.JPG)
