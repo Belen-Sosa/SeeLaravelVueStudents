@@ -31,9 +31,9 @@ class SurveysService{
      //obteniendo la informacion de la API 
 
      async fetchAll(){
-
+       
         try{
-             const uri= `${this.store.baseURL}/api_surveys`
+             const uri= `${this.store.baseURL}/api_surveys_user/${this.store.user_id}`
 
             const rawResponse= await fetch(uri,{
                 method:'GET',
@@ -114,10 +114,12 @@ class SurveysService{
 
 
       // Nuevo método para enviar los datos del formulario
-    async submitSurveyResponse( response) {
+    async submitSurveyResponse( response,id_survey) {
+        console.log("aca en survey",this.store.user_id)
+        console.log(response )
         try {
             
-            const url = `${this.store.baseURL}/results`;
+            const url = `${this.store.baseURL}/api_results/${this.store.user_id}/${id_survey}`;
             const res = await fetch(url, {
                 method: 'POST',
                 headers: {

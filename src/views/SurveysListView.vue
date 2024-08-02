@@ -12,8 +12,8 @@
           class="content-data flex flex-col justify-between text-center p-5 rounded-lg shadow-md">
           <div class="flex items-center gap-x-4 text-xs border-b border-gray-300 ">
             <time :datetime="post.start_date" class="text-gray-500 pl-5">Publicado el {{ post.start_date }}</time>
-            <p class="p-1 mb-1 font-medium text-gray-600 rounded bg-slate-300">Materia {{
-              post.subject_id }}</p>
+            <p class="p-1 mb-1 font-medium text-gray-600 rounded bg-slate-300">{{
+              post.subject.name }}</p>
           </div>
 
           <div class="group relative">
@@ -47,6 +47,7 @@ import NavbarComponent from "../components/NavbarComponent.vue"
 const service = new SurveysService()
 // Obtenemos la información del servicio 
 const posts = service.getPosts()
+console.log('posts', posts)
 
 onMounted(async () => {
   await service.fetchAll()

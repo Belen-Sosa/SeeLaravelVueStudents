@@ -122,6 +122,7 @@ const submitSurvey = async () => {
 
   // Clone the responses object to avoid unwanted mutations
   const response = JSON.parse(JSON.stringify(responses.value));
+  
 
   // Remove empty responses
   Object.keys(response).forEach(key => {
@@ -133,7 +134,7 @@ const submitSurvey = async () => {
   });
 
   console.log(response);
-  const result = await service.submitSurveyResponse(response);
+  const result = await service.submitSurveyResponse(response,survey.value.id);
   console.log(result);
 
   if (result.success) {

@@ -6,8 +6,8 @@ const useAuth= defineStore('auth',{
             token:null,
             baseURL: 'http://127.0.0.1:8000/api',
             subjects_register:null,
-            name:''
-           
+            name:'',
+           user_id:''
         }
     },
     actions:{ 
@@ -43,6 +43,8 @@ const useAuth= defineStore('auth',{
                 console.log(  "response")
                 console.log(  response)
                 this.name= response.user.name
+                this.user_id= response.user.id
+                console.log("user_id",this.user_id)
 
                 this.subjects_register=response.subjects_register
           

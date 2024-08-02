@@ -5,6 +5,7 @@ class AuthService{
     constructor(){
         this.jwt= ref('')
         this.error= ref('')
+        this.user_id= ref('')
 
     
     }
@@ -47,6 +48,7 @@ class AuthService{
             }else if ('token' in response) {
                 console.log('Login success'); // Add this line for debugging
                 this.jwt.value = response.token;
+                this.user_id= response.user.id;
                 return true;
             } 
        
